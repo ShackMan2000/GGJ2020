@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        collider = GetComponent<CapsuleCollider2D>();
-        animator = GetComponent<Animator>();
+        collider = GetComponent<BoxCollider2D>();
+       // animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -62,14 +62,14 @@ public class PlayerController : MonoBehaviour
 
     private void SwitchAnimation(float horizontalMov)
     {
-        if (horizontalMov == 0)
-        {
-            animator.Play("char_idle");
-        }
-        else
-        {
-            animator.Play("char_move");
-        }
+        //if (horizontalMov == 0)
+        //{
+        //    animator.Play("char_idle");
+        //}
+        //else
+        //{
+        //    animator.Play("char_move");
+        //}
     }
 
     // This method shoots down rays, starting from the left side of the boxCollider. The number is adjustable:
