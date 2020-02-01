@@ -34,7 +34,6 @@ public class Explosion : MonoBehaviour
     private IEnumerator ExplosionRoutine(ExplosionDetails details)
     {
         int listsToDestroy = details.explosionList.Count;
-        print(listsToDestroy);
         float delay = details.delayBetweenRings;
         int count = 0;
 
@@ -47,16 +46,10 @@ public class Explosion : MonoBehaviour
             listsToDestroy --;
         }
 
-
         yield return null;
 
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
+       
 
 
 }

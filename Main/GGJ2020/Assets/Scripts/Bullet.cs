@@ -37,7 +37,6 @@ public class Bullet : MonoBehaviour
         transform.position = position;
         transform.localScale = new Vector2(transform.localScale.x * direction, transform.localScale.y);
         rigidBody.velocity = new Vector2(speed * direction, 0f);
-        print("bulletActivation" + details.explosionList.Count);
     }
 
 

@@ -23,7 +23,6 @@ public class TileDestroyer : MonoBehaviour
 
     public void DestroyTiles(Vector2 startpositionWorld, List<Vector2Int> destroyList)
     {
-        print("D");
         Vector3Int startPos = mapToDestroy.WorldToCell(startpositionWorld);
 
         foreach (var pos in destroyList)

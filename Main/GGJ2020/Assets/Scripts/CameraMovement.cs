@@ -12,9 +12,7 @@ public class CameraMovement : MonoBehaviour
   
 
 
-    private float speed,intervallCounter;
-
-    public float maxX;
+    private float speed,intervallCounter; 
 
 
 
@@ -34,10 +32,8 @@ public class CameraMovement : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
 
-     maxX = cam.ViewportToWorldPoint(new Vector2(1, 1)).x;
 
-
-        CheckSpeedIncrease();
+        IncreaseSpeed();
 
     }
 
@@ -45,14 +41,13 @@ public class CameraMovement : MonoBehaviour
 
 
 
-    private void CheckSpeedIncrease()
+    private void IncreaseSpeed()
     {
-        intervallCounter -= Time.deltaTime;
-        if (intervallCounter <= 0f)
-        {
-            intervallCounter = speedIncreaseIntervall;
-            speed += speedIncrease;
-
-        }
+     
+            speed += speedIncrease * (Time.deltaTime / speedIncreaseIntervall);        
     }
+
+
+
+
 }
