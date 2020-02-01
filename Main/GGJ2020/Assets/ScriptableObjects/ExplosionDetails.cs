@@ -7,8 +7,7 @@ public class ExplosionDetails : ScriptableObject
 {
  
     [SerializeField]
-    private List<Vector2> explosionList;
-
+    private List<List<Vector2>> explosionList = new List<List<Vector2>>();
 
     [SerializeField]
     private float width, height; //use odd numbers only
@@ -23,6 +22,8 @@ public class ExplosionDetails : ScriptableObject
     public void FillList()
     {
 
+      explosionList.Clear();
+
         // float r_x = width /3.0f;
         // float r_y = height /2.0f;
 
@@ -34,7 +35,7 @@ public class ExplosionDetails : ScriptableObject
 
         //todo: co-routine c# 
 
-        for(int k =0; k < max_expansion; k++){
+        for(int k =1; k < max_expansion; k++){
 
 
           float r_x_applied = k<r_x ? k:r_x;
@@ -84,12 +85,8 @@ public class ExplosionDetails : ScriptableObject
           explosion_line_2d+="explosion:\n";
           Debug.Log(explosion_line_2d);
 
-
+          explosionList.Add(explosionList_local);
         }
-
-
-
-        
 
         // Debug.Log("Creating enemy number: " + i);
         // for(int i =0; i < explosionList.size(); i++){
