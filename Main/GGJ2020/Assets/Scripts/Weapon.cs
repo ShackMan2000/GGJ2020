@@ -13,13 +13,18 @@ public class Weapon : MonoBehaviour
     private Transform bulletSpawnPoint, playerTransform;
 
    
+    [SerializeField]
+    private Animator animator;
+
 
     private TileDestroyer destroyer;
+
 
 
     private void Awake()
     {
         destroyer = FindObjectOfType<TileDestroyer>();
+
     }
 
 
@@ -36,7 +41,13 @@ public class Weapon : MonoBehaviour
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.C))
+        {
             Shoot(playerTransform.localScale.x);
+            animator.SetTrigger("shoot");
+        }
+
+
+
     }
 
 
