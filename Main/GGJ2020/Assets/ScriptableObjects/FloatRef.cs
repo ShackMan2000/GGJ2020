@@ -32,5 +32,11 @@ public class FloatRef : ScriptableObject
 
     }
 
+    public void AddUnitAmount(int addAmount)
+    {
+        currentUnits += addAmount;
+
+    }
+
 
 }
