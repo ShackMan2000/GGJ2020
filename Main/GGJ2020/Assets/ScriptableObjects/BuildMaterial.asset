@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa9677489049474f94d0e5ee55fde27, type: 3}
   m_Name: BuildMaterial
   m_EditorClassIdentifier: 
-  unitsPerTile: 0
+  unitsPerTile: 1

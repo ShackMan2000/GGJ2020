@@ -4,45 +4,75 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Publc variables
     public bool facingRight = true;
     public LayerMask platformLayer;
 
-    // Private variables
-    private float speed = 5.0f;
-    private Animator animator;
-    private Rigidbody2D rigidbody2D;
-    private Collider2D collider;  
-    
     [SerializeField]
-    private float jumpForce = 3500.0f;
+    private float speed = 5.0f;
+
+    [SerializeField]
+    private float jumpForce;
+
+
+    [SerializeField]
+    private CameraMovement cam;
+
+    [SerializeField]
+    private float cameraBoundsMargin;
+
+
+    [SerializeField]
     private int numberOfRays = 2;
 
 
     [SerializeField]
-    private float rayLength = 0.1f;    
-    
+    private float rayLength = 0.1f;
+
+
+
+    private Animator animator;
+    private Rigidbody2D rigidbody2D;
+    private Collider2D collider;
+
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
-       // animator = GetComponent<Animator>();
+        // animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        var horizontalInput = Input.GetAxis("Horizontal");
+
+
+
+        float horizontalInput = Input.GetAxis("Horizontal");
         var mov = new Vector3(horizontalInput * speed, rigidbody2D.velocity.y, 0f);
+      //  float moveByX = speed * horizontalInput * Time.deltaTime;
+
+
+        //only break if going right to not get stuck
+        //if (transform.position.x > cam.maxX - cameraBoundsMargin && moveByX > 0f)        
+        //    moveByX = 0f;
+
+        //if (transform.position.x > cam.maxX - cameraBoundsMargin && rigidbody2D.velocity.x > 0f)
+        //   mov.x = -mov.x;
+
+
         rigidbody2D.velocity = mov;
+
+        //transform.position = new Vector2(transform.position.x + moveByX, transform.position.y);
+
+
+
 
         // Change the view direction of the character
         if (horizontalInput < 0 && facingRight ||
             horizontalInput > 0 && !facingRight)
         {
             Flip();
-        }        
-        
+        }
+
         // Jump
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -93,7 +123,7 @@ public class PlayerController : MonoBehaviour
             float nextRaySpacing = (boxBounds.extents.x * 2.0f) / (numberOfRays - 1f);
             rayOrigin += Vector2.right * nextRaySpacing;
         }
-        
+
         return atLeastOneRayHittingGround;
     }
 
@@ -101,22 +131,21 @@ public class PlayerController : MonoBehaviour
     /// Flips the direction of the transform.
     /// </summary>
     private void Flip()
-    {        
-        facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);        
-    }
-    
-    /// <summary>
-    /// Check all the collided objects
-    /// </summary>
-    /// <param name="hitInfo"></param>
-    protected virtual void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Debug.Log(hitInfo.name);
-
-        if (hitInfo.name == "Portal")
-        {
-            Debug.Log("FINISHED LEVEL");
-        }           
+        facingRight = !facingRight;
+        transform.localScale = new Vector3(transform.localScale.x * -1f, 1f, 1f);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
+        if(hitInfo.CompareTag("fire"))
+            print("dead");
+
+      
+    }
+
+
+
 }

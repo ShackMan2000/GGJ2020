@@ -10,18 +10,24 @@ public class PlaceHolderTile : MonoBehaviour
     private FloatRef buildMaterial;
     
     [SerializeField]
-    private Transform placeHolderTransform;
+    private Transform placeHolderTransform;   
 
 
     [SerializeField]
     private Tilemap map;
 
     [SerializeField]
+    private Color availableColor, unavailableColor;
+
+    [SerializeField]
     private Tile buildTilePF;
 
-    private float mapZ;
+    private SpriteRenderer placeHolderSpriteRenderer;
+    private float mapZ, widthOfTile;
 
     private Transform myTransform;
+
+
 
 
 
@@ -29,6 +35,9 @@ public class PlaceHolderTile : MonoBehaviour
     {
         myTransform = GetComponent<Transform>();
         mapZ = map.transform.position.z;
+        placeHolderSpriteRenderer = placeHolderTransform.GetComponent<SpriteRenderer>();
+        widthOfTile = placeHolderSpriteRenderer.sprite.bounds.size.x / 2f;
+        availableColor = placeHolderSpriteRenderer.color;
     }
 
 
@@ -36,10 +45,12 @@ public class PlaceHolderTile : MonoBehaviour
     private void Update()
     {
         Vector3Int positionInGrid = map.WorldToCell(myTransform.position);
-        placeHolderTransform.position = map.CellToWorld(positionInGrid);      
+        Vector2 positionUnadjusted = map.CellToWorld(positionInGrid);
+        placeHolderTransform.position = positionUnadjusted + new Vector2(widthOfTile, widthOfTile);
 
+        placeHolderSpriteRenderer.color = buildMaterial.AvailableUnites >= 1 ? availableColor : unavailableColor;
 
-        if(Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
             BuildTile();
     }
 
@@ -49,6 +60,8 @@ public class PlaceHolderTile : MonoBehaviour
 
         Vector3Int positionInGrid = map.WorldToCell(placeHolderTransform.position);
         map.SetTile(positionInGrid, buildTilePF);
+
+        buildMaterial.DeductMaterialForTile(1);
 
     }
 
