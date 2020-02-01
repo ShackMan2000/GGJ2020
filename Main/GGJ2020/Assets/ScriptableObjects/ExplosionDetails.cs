@@ -10,7 +10,7 @@ public class ExplosionDetails : ScriptableObject
     private List<List<Vector2>> explosionList = new List<List<Vector2>>();
 
     [SerializeField]
-    private float width, height; //use odd numbers only
+    private int width, height; //use odd numbers only
 
     [SerializeField]
     private float r_x, r_y; //use odd numbers only
@@ -56,8 +56,8 @@ public class ExplosionDetails : ScriptableObject
 
               for(int j = 0; j < height; j++){
 
-                float x_p = (float)i;
-                float y_p = (float)j;
+                int x_p = i;
+                int y_p = j;
 
                 float d_x = (x_p - x_c)*(x_p - x_c) / (r_x_applied * r_x_applied);
                 float d_y = (y_p - y_c)*(y_p - y_c) / (r_y_applied * r_y_applied);
@@ -70,15 +70,21 @@ public class ExplosionDetails : ScriptableObject
                 if(
                   (d_x + d_y <= 1 || cross && (d_x_c + d_y_c <= 1))  
                 ){
-                  explosionList_local.Add( new Vector2(x_p, y_p));
-                  explosion_line_2d += "*";
+
+                  int final_x = (x_p - (int)((width/2) + 0.5f));
+                  int final_y = (y_p - (int)((height/2)+ 0.5f));
+                  explosionList_local.Add( new Vector2(final_x, final_y ));
+                  string sign =" "; 
+                  string val = ""+final_x;
+                  if(final_x > 0){
+                    sign =" ";
+                  }
+                  explosion_line_2d += sign+val;
                   was_set = true;
                 }
                 else{
-                  explosion_line_2d += "_";
+                  explosion_line_2d += "__";
                 }
-
-
               }
               explosion_line_2d+="\n";
           }
