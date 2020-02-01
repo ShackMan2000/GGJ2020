@@ -11,10 +11,10 @@ public class ExplosionDetails : ScriptableObject
 
 
     [SerializeField]
-    private float width, height;
+    private float width, height; //use odd numbers only
 
     [SerializeField]
-    private float r_x, r_y;
+    private float r_x, r_y; //use odd numbers only
 
     [SerializeField]
     private bool cross;
@@ -29,45 +29,66 @@ public class ExplosionDetails : ScriptableObject
         float x_c = width /2.0f - 0.5f;
         float y_c = height /2.0f - 0.5f;
 
-        float r_x_crossed = r_y;
-        float r_y_crossed = r_x;
+        int max_expansion = r_x >= r_y ? (int)r_x : (int)r_y;
 
 
-        string explosion_line_2d = "";
-        explosion_line_2d+="explosion:\n";
+        //todo: co-routine c# 
 
-        for(int i = 0; i < width; i++){
+        for(int k =0; k < max_expansion; k++){
 
-            explosion_line_2d += "explosion:";
+          float r_x_applied = (float)k;
+          float r_y_applied = (float)k;
 
-            for(int j = 0; j < height; j++){
+          float r_x_crossed = r_y_applied;
+          float r_y_crossed = r_x_applied;
 
-              float x_p = (float)i;
-              float y_p = (float)j;
-
-              float d_x = (x_p - x_c)*(x_p - x_c) / (r_x * r_x);
-              float d_y = (y_p - y_c)*(y_p - y_c) / (r_y * r_y);
+          List<Vector2> explosionList_local = new List<Vector2>();
 
 
-              bool was_set = false;
-              float d_x_c = (x_p - x_c)*(x_p - x_c) / (r_x_crossed * r_x_crossed);
-              float d_y_c = (y_p - y_c)*(y_p - y_c) / (r_y_crossed * r_y_crossed);
+          string explosion_line_2d = "";
+          explosion_line_2d+="explosion:\n";
 
-              if(d_x + d_y <= 1 || (cross && (d_x_c + d_y_c <= 1) )){
-                explosionList.Add( new Vector2(x_p, y_p));
-                explosion_line_2d += "*";
-                was_set = true;
+          for(int i = 0; i < width; i++){
+
+              explosion_line_2d += "explosion:";
+
+              for(int j = 0; j < height; j++){
+
+                float x_p = (float)i;
+                float y_p = (float)j;
+
+                float d_x = (x_p - x_c)*(x_p - x_c) / (r_x_applied * r_x_applied);
+                float d_y = (y_p - y_c)*(y_p - y_c) / (r_y_applied * r_y_applied);
+
+
+                bool was_set = false;
+                float d_x_c = (x_p - x_c)*(x_p - x_c) / (r_x_crossed * r_x_crossed);
+                float d_y_c = (y_p - y_c)*(y_p - y_c) / (r_y_crossed * r_y_crossed);
+
+                if(
+                  (d_x + d_y <= 1 || cross && (d_x_c + d_y_c <= 1))  
+                ){
+                  explosionList_local.Add( new Vector2(x_p, y_p));
+                  explosion_line_2d += "*";
+                  was_set = true;
+                }
+                else{
+                  explosion_line_2d += "_";
+                }
+
+
               }
-              else{
-                explosion_line_2d += "_";
-              }
+              explosion_line_2d+="\n";
+          }
+          explosion_line_2d+="explosion:\n";
+          Debug.Log(explosion_line_2d);
 
 
-            }
-            explosion_line_2d+="\n";
         }
-        explosion_line_2d+="explosion:\n";
-        Debug.Log(explosion_line_2d);
+
+
+
+        
 
         // Debug.Log("Creating enemy number: " + i);
         // for(int i =0; i < explosionList.size(); i++){
