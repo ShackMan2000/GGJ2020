@@ -29,27 +29,29 @@ public class PlayerController : MonoBehaviour
     private float rayLength = 0.1f;
 
 
+    public float input;
+
+
 
     private Animator animator;
-    private Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigidbody2D;
     private Collider2D collider;
 
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
-        // animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+       
     }
 
     void Update()
     {
 
-
-
         float horizontalInput = Input.GetAxis("Horizontal");
         var mov = new Vector3(horizontalInput * speed, rigidbody2D.velocity.y, 0f);
      
-
+        input = horizontalInput;
 
         rigidbody2D.velocity = mov;
 
@@ -58,16 +60,19 @@ public class PlayerController : MonoBehaviour
             Flip();
         
 
-        // Jump
+        
         if (Input.GetKeyDown(KeyCode.UpArrow) && IsStandingOnGround())
         {   
             // Resetting vertical speed to 0 since the player might hit jump when the character is falling down right before hitting the ground
             // in that case the gravity force might overpower the jump force, and the result is that it "feels" like the jump button didn't work
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0f);
             rigidbody2D.AddForce(Vector2.up * jumpForce);
+            animator.SetTrigger("jump");
+
         }
 
-        SwitchAnimation(horizontalInput);
+        animator.SetFloat("horizontalMoveAbsolute", Mathf.Abs(rigidbody2D.velocity.x));
+
     }
 
 
@@ -75,18 +80,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-    private void SwitchAnimation(float horizontalMov)
-    {
-        //if (horizontalMov == 0)
-        //{
-        //    animator.Play("char_idle");
-        //}
-        //else
-        //{
-        //    animator.Play("char_move");
-        //}
-    }
 
     // This method shoots down rays, starting from the left side of the boxCollider. The number is adjustable:
     // if the game has only platforms that are wider than the player, 2 is enough. 
