@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private float rayLength = 0.1f;
 
 
+    public float input;
+
 
     private Animator animator;
     private Rigidbody2D rigidbody2D;
@@ -49,7 +51,7 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         var mov = new Vector3(horizontalInput * speed, rigidbody2D.velocity.y, 0f);
      
-
+        input = horizontalInput;
 
         rigidbody2D.velocity = mov;
 
