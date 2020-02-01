@@ -36,8 +36,9 @@ public class ExplosionDetails : ScriptableObject
 
         for(int k =0; k < max_expansion; k++){
 
-          float r_x_applied = (float)k;
-          float r_y_applied = (float)k;
+
+          float r_x_applied = k<r_x ? k:r_x;
+          float r_y_applied = k<r_y ? k:r_y;
 
           float r_x_crossed = r_y_applied;
           float r_y_crossed = r_x_applied;
