@@ -46,8 +46,7 @@ public class Bullet : MonoBehaviour
     {        
       Explosion newExplosion = Instantiate(explosionPF);
         newExplosion.Explode(transform.position, details);
-        Destroy(gameObject);
-        
+        Destroy(gameObject);        
     }
 
 

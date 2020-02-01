@@ -14,7 +14,7 @@ public class TileDestroyer : MonoBehaviour
 
     private void Awake()
     {
-        mapZ = mapToDestroy.WorldToCell(transform.position).z;
+        mapZ = mapToDestroy.WorldToCell(mapToDestroy.transform.position).z;
     }
 
 
@@ -23,12 +23,14 @@ public class TileDestroyer : MonoBehaviour
 
     public void DestroyTiles(Vector2 startpositionWorld, List<Vector2Int> destroyList)
     {
+      
         Vector3Int startPos = mapToDestroy.WorldToCell(startpositionWorld);
+       
 
         foreach (var pos in destroyList)
-        {
+        {      
             mapToDestroy.SetTile(new Vector3Int(pos.x + startPos.x, pos.y + startPos.y, mapZ), null);
-
+           
         }
 
 
