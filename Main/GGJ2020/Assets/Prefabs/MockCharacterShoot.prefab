@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5856840219206062465}
   - component: {fileID: 5856840219206062469}
   - component: {fileID: 5856840219206062468}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MockCharacterShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +107,7 @@ MonoBehaviour:
   cameraBoundsMargin: 0
   numberOfRays: 2
   rayLength: 0.1
+  input: 0
 --- !u!50 &5856840219206062469
 Rigidbody2D:
   serializedVersion: 4
@@ -171,6 +172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 5513546566979101182, guid: 6b7e518f9ffb3d640988c317134f5f12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6980248731538929694, guid: 6b7e518f9ffb3d640988c317134f5f12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,6 +231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472355592982932216, guid: 6b7e518f9ffb3d640988c317134f5f12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7e518f9ffb3d640988c317134f5f12, type: 3}
