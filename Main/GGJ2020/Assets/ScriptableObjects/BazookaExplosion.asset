@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735d5a97eb3ab754bb9e1aa0a61de227, type: 3}
   m_Name: BazookaExplosion
   m_EditorClassIdentifier: 
-  explosionList: []
-  width: 0
-  height: 0
+  delayBetweenRings: 0.1
+  width: 21
+  height: 21
+  r_x: 9
+  r_y: 9
+  cross: 0
