@@ -48,39 +48,19 @@ public class PlayerController : MonoBehaviour
 
         float horizontalInput = Input.GetAxis("Horizontal");
         var mov = new Vector3(horizontalInput * speed, rigidbody2D.velocity.y, 0f);
-      //  float moveByX = speed * horizontalInput * Time.deltaTime;
-
-
-        //only break if going right to not get stuck
-        //if (transform.position.x > cam.maxX - cameraBoundsMargin && moveByX > 0f)        
-        //    moveByX = 0f;
-
-        //if (transform.position.x > cam.maxX - cameraBoundsMargin && rigidbody2D.velocity.x > 0f)
-        //   mov.x = -mov.x;
+     
 
 
         rigidbody2D.velocity = mov;
 
-        //transform.position = new Vector2(transform.position.x + moveByX, transform.position.y);
 
-
-
-
-        // Change the view direction of the character
-        if (horizontalInput < 0 && facingRight ||
-            horizontalInput > 0 && !facingRight)
-        {
+        if (horizontalInput < 0 && facingRight || horizontalInput > 0 && !facingRight)        
             Flip();
-        }
+        
 
         // Jump
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if (IsStandingOnGround() == false)
-            {
-                return;
-            }
-
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IsStandingOnGround())
+        {   
             // Resetting vertical speed to 0 since the player might hit jump when the character is falling down right before hitting the ground
             // in that case the gravity force might overpower the jump force, and the result is that it "feels" like the jump button didn't work
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0f);
@@ -89,6 +69,12 @@ public class PlayerController : MonoBehaviour
 
         SwitchAnimation(horizontalInput);
     }
+
+
+
+
+
+
 
     private void SwitchAnimation(float horizontalMov)
     {
@@ -114,7 +100,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < numberOfRays; i++)
         {
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, platformLayer);
-            Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
+         //   Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
 
             if (hit)
             {
@@ -127,19 +113,16 @@ public class PlayerController : MonoBehaviour
         return atLeastOneRayHittingGround;
     }
 
-    /// <summary>
-    /// Flips the direction of the transform.
-    /// </summary>
+
+
     private void Flip()
     {
         facingRight = !facingRight;
         transform.localScale = new Vector3(transform.localScale.x * -1f, 1f, 1f);
     }
-
-
+    
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-
         if(hitInfo.CompareTag("fire"))
             print("dead");
 
