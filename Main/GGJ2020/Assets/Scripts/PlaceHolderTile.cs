@@ -48,7 +48,7 @@ public class PlaceHolderTile : MonoBehaviour
         Vector2 positionUnadjusted = map.CellToWorld(positionInGrid);
         placeHolderTransform.position = positionUnadjusted + new Vector2(widthOfTile, widthOfTile);
 
-        placeHolderSpriteRenderer.color = buildMaterial.AvailableUnites >= 1 ? availableColor : unavailableColor;
+        placeHolderSpriteRenderer.color = buildMaterial.CurrentUnits >= 1 ? availableColor : unavailableColor;
 
         if (Input.GetKeyDown(KeyCode.B))
             BuildTile();
