@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu]
 public class ExplosionDetails : ScriptableObject
 {
  
-    [SerializeField]
-    private List<List<Vector2>> explosionList = new List<List<Vector2>>();
+    
+    public List<List<Vector2Int>> explosionList = new List<List<Vector2Int>>();
+
+    public float delayBetweenRings;
 
     [SerializeField]
     private int width, height; //use odd numbers only
@@ -44,7 +47,7 @@ public class ExplosionDetails : ScriptableObject
           float r_x_crossed = r_y_applied;
           float r_y_crossed = r_x_applied;
 
-          List<Vector2> explosionList_local = new List<Vector2>();
+          List<Vector2Int> explosionList_local = new List<Vector2Int>();
 
 
           string explosion_line_2d = "";
@@ -73,7 +76,7 @@ public class ExplosionDetails : ScriptableObject
 
                   int final_x = (x_p - (int)((width/2) + 0.5f));
                   int final_y = (y_p - (int)((height/2)+ 0.5f));
-                  explosionList_local.Add( new Vector2(final_x, final_y ));
+                  explosionList_local.Add( new Vector2Int(final_x, final_y ));
                   string sign =" "; 
                   string val = ""+final_x;
                   if(final_x > 0){
@@ -89,10 +92,12 @@ public class ExplosionDetails : ScriptableObject
               explosion_line_2d+="\n";
           }
           explosion_line_2d+="explosion:\n";
-          Debug.Log(explosion_line_2d);
+         // Debug.Log(explosion_line_2d);
 
           explosionList.Add(explosionList_local);
         }
+
+
 
         // Debug.Log("Creating enemy number: " + i);
         // for(int i =0; i < explosionList.size(); i++){
