@@ -289,17 +289,17 @@ PrefabInstance:
     - target: {fileID: 5244784639782476793, guid: 509d6698f59b7df49b1374d757afa3b2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.0553126
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5244784639782476793, guid: 509d6698f59b7df49b1374d757afa3b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9187611
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5244784639782476793, guid: 509d6698f59b7df49b1374d757afa3b2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0585938
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5244784639782476793, guid: 509d6698f59b7df49b1374d757afa3b2,
         type: 3}
@@ -340,6 +340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8628597333028148631, guid: 509d6698f59b7df49b1374d757afa3b2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 9062448632918376700, guid: 509d6698f59b7df49b1374d757afa3b2,
         type: 3}
@@ -389,6 +394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerShooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031470474125974666, guid: e0bde86a4cc21c94ea21217be7a3883e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7813674925521125631, guid: e0bde86a4cc21c94ea21217be7a3883e,
         type: 3}
