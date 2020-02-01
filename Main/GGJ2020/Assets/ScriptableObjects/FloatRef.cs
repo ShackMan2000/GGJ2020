@@ -6,22 +6,21 @@ using UnityEngine;
 [CreateAssetMenu]
 public class FloatRef : ScriptableObject
 {
-    [SerializeField]
-    private int unitsPerTile;
+   
 
     private int currentUnits;
 
 
     //use event OnValueChange
 
-    public int AvailableUnites => Mathf.FloorToInt((float)currentUnits / (float)unitsPerTile);
+    public int CurrentUnits => currentUnits ;
 
  
 
     public void DeductMaterialForTile(int tilesToBuild)
     {
 
-        currentUnits -= unitsPerTile * tilesToBuild;
+        currentUnits -= tilesToBuild;
 
     }
 

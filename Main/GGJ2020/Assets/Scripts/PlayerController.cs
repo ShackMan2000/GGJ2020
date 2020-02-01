@@ -128,7 +128,15 @@ public class PlayerController : MonoBehaviour
         if(hitInfo.CompareTag("fire"))
             print("dead");
 
-      
+    }
+
+    private void OnCollisionEnter2D(Collision2D hitInfo)
+    {
+        if(hitInfo.collider.CompareTag("collectable")){
+          print("collect");
+          hitInfo.collider.GetComponent<Collectable>().onPickUp();
+          
+        }
     }
 
 
