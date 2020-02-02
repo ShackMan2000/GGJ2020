@@ -15,6 +15,6 @@ MonoBehaviour:
   delayBetweenRings: 0.1
   width: 9
   height: 9
-  r_x: 9
-  r_y: 9
+  r_x: 5
+  r_y: 5
   cross: 0
