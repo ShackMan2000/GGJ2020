@@ -611,6 +611,7 @@ MonoBehaviour:
   cameraBoundsMargin: 0
   numberOfRays: 2
   rayLength: 0.1
+  horizontal: Horizontal1
   input: 0
   bodyAnimator: {fileID: 1496538407}
   feetAnimator: {fileID: 2434322381818215886}
