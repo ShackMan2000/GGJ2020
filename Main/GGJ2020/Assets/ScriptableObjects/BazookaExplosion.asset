@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BazookaExplosion
   m_EditorClassIdentifier: 
   delayBetweenRings: 0.1
-  width: 21
-  height: 21
-  r_x: 9
-  r_y: 9
+  width: 3
+  height: 3
+  r_x: 3
+  r_y: 3
   cross: 0

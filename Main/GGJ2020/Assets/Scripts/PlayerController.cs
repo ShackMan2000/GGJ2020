@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidbody2D;
     private Collider2D collider;
 
+
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -111,7 +112,7 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         facingRight = !facingRight;
-        transform.localScale = new Vector3(transform.localScale.x * -1f, 1f, 1f);
+        transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, 1f);
     }
     
     private void OnTriggerEnter2D(Collider2D hitInfo)

@@ -10,8 +10,8 @@ public class CameraMovement : MonoBehaviour
     private float startSpeed, speedIncrease, speedIncreaseIntervall;
 
   
-
-
+    public float Speed => speed;
+    
     private float speed,intervallCounter; 
 
 
