@@ -54,3 +54,10 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+LinuxPlayer_s.debug
+UnityPlayer.so
+UnityPlayer_s.debug
+exectuable.out.x86_64
+exectuable.out_Data/
+
