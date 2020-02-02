@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
 
     public float input;
 
+    
+
+
+    private GameManager manager;
 
     [SerializeField]
     private Animator bodyAnimator, feetAnimator;
@@ -46,7 +50,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        collider = GetComponent<CircleCollider2D>();       
+        collider = GetComponent<CircleCollider2D>();   
+        manager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -124,7 +129,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if(hitInfo.CompareTag("fire"))
-            print("dead");
+            manager.PlayerDied();
 
     }
 

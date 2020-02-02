@@ -21,7 +21,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - newUI
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
     locked: 0
   - name: PlayerShooter
     uniqueID: 550987195
+    locked: 0
+  - name: UI
+    uniqueID: 1250583247
     locked: 0
