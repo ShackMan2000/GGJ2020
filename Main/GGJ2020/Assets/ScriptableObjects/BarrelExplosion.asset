@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735d5a97eb3ab754bb9e1aa0a61de227, type: 3}
   m_Name: BarrelExplosion
   m_EditorClassIdentifier: 
-  delayBetweenRings: 0
-  width: 0
-  height: 0
-  r_x: 0
-  r_y: 0
+  delayBetweenRings: 0.1
+  width: 9
+  height: 9
+  r_x: 9
+  r_y: 9
   cross: 0
