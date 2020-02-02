@@ -36,7 +36,7 @@ public class PlaceHolderTile : MonoBehaviour
         myTransform = GetComponent<Transform>();
         mapZ = map.transform.position.z;
         placeHolderSpriteRenderer = placeHolderTransform.GetComponent<SpriteRenderer>();
-        widthOfTile = placeHolderSpriteRenderer.sprite.bounds.size.x / 2f;
+        widthOfTile = placeHolderSpriteRenderer.sprite.bounds.size.x / 4f;
         availableColor = placeHolderSpriteRenderer.color;
     }
 
@@ -48,7 +48,7 @@ public class PlaceHolderTile : MonoBehaviour
         Vector2 positionUnadjusted = map.CellToWorld(positionInGrid);
         placeHolderTransform.position = positionUnadjusted + new Vector2(widthOfTile, widthOfTile);
 
-        placeHolderSpriteRenderer.color = buildMaterial.CurrentUnits >= 1 ? availableColor : unavailableColor;
+       // placeHolderSpriteRenderer.color = buildMaterial.CurrentUnits >= 1 ? availableColor : unavailableColor;
 
         if (Input.GetKeyDown(KeyCode.B))
             BuildTile();
