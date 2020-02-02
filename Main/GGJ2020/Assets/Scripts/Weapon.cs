@@ -24,6 +24,7 @@ public class Weapon : MonoBehaviour
     private void Awake()
     {
         destroyer = FindObjectOfType<TileDestroyer>();
+        animator = GetComponent<Animator>();
 
     }
 

@@ -520,8 +520,8 @@ GameObject:
   - component: {fileID: 7813674925521125631}
   - component: {fileID: 2434322381818215886}
   - component: {fileID: 466019083}
-  - component: {fileID: 466019082}
   - component: {fileID: 466019084}
+  - component: {fileID: 466019082}
   m_Layer: 0
   m_Name: PlayerShooter
   m_TagString: Untagged
@@ -559,7 +559,7 @@ Animator:
   m_GameObject: {fileID: 6031470474125974666}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 67edea8058e08114589773bdeb67017b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 84f348ff99ddc664cb5fce08bb4e6171, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -589,32 +589,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &466019082
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6031470474125974666}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.030427575, y: -0.16518188}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.6025074, y: 3.3182855}
-  m_EdgeRadius: 0
 --- !u!114 &466019084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,14 +605,32 @@ MonoBehaviour:
   platformLayer:
     serializedVersion: 2
     m_Bits: 256
-  speed: 20
+  speed: 10
   jumpForce: 600
   cam: {fileID: 0}
   cameraBoundsMargin: 0
   numberOfRays: 2
   rayLength: 0.1
   input: 0
+  bodyAnimator: {fileID: 1496538407}
+  feetAnimator: {fileID: 2434322381818215886}
   rigidbody2D: {fileID: 0}
+--- !u!58 &466019082
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031470474125974666}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.4}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1 &6302794169657965166
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +793,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &9213380280488658179
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088522600020175823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3649294772743621169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -808,6 +819,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7813674925521125631}
     m_Modifications:
+    - target: {fileID: 1537865535290752370, guid: 6b7e518f9ffb3d640988c317134f5f12,
+        type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 7813674925521125631}
     - target: {fileID: 5513546566979101182, guid: 6b7e518f9ffb3d640988c317134f5f12,
         type: 3}
       propertyPath: m_Name
@@ -870,6 +886,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7e518f9ffb3d640988c317134f5f12, type: 3}
+--- !u!1 &9088522600020175823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5513546566979101182, guid: 6b7e518f9ffb3d640988c317134f5f12,
+    type: 3}
+  m_PrefabInstance: {fileID: 3649294772743621169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5943121481422434863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6980248731538929694, guid: 6b7e518f9ffb3d640988c317134f5f12,
