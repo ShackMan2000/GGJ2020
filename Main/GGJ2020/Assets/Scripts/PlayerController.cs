@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public bool facingRight = true;
-    public LayerMask platformLayer;
+
+
+    public LayerMask tiles;
 
     [SerializeField]
     private float speed = 5.0f;
@@ -104,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
         for (int i = 0; i < numberOfRays; i++)
         {
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, platformLayer);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, tiles);
          //   Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
 
             if (hit)
@@ -114,6 +116,8 @@ public class PlayerController : MonoBehaviour
             float nextRaySpacing = (boxBounds.extents.x * 2.0f) / (numberOfRays - 1f);
             rayOrigin += Vector2.right * nextRaySpacing;
         }
+
+
 
         return atLeastOneRayHittingGround;
     }

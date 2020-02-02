@@ -747,6 +747,10 @@ PrefabInstance:
       propertyPath: jumpKey
       value: 119
       objectReference: {fileID: 0}
+    - target: {fileID: 1164649696, guid: 509d6698f59b7df49b1374d757afa3b2, type: 3}
+      propertyPath: destructableLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5244784639782476793, guid: 509d6698f59b7df49b1374d757afa3b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2735,7 +2739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1790441320
 RectTransform:
   m_ObjectHideFlags: 0

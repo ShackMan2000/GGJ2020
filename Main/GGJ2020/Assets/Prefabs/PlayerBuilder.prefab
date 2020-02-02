@@ -49,7 +49,7 @@ MonoBehaviour:
   map: {fileID: 0}
   availableColor: {r: 1, g: 1, b: 1, a: 1}
   unavailableColor: {r: 1, g: 1, b: 1, a: 1}
-  buildTilePF: {fileID: 11400000, guid: 503f28e3f15677741ba5286f9c05a286, type: 2}
+  buildTilePF: {fileID: 0}
 --- !u!1 &1786207335
 GameObject:
   m_ObjectHideFlags: 0
@@ -5626,7 +5626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingRight: 1
-  platformLayer:
+  tiles:
     serializedVersion: 2
     m_Bits: 256
   speed: 10
@@ -5634,8 +5634,10 @@ MonoBehaviour:
   cam: {fileID: 0}
   cameraBoundsMargin: 0
   numberOfRays: 2
-  rayLength: 0.1
+  rayLength: 0.37
+  horizontal: 
   input: 0
   bodyAnimator: {fileID: 0}
   feetAnimator: {fileID: 0}
   rigidbody2D: {fileID: 0}
+  jumpKey: 0
