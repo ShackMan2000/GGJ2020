@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public float input;
 
-    
+
 
 
     private GameManager manager;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        collider = GetComponent<CircleCollider2D>();   
+        collider = GetComponent<CircleCollider2D>();
         manager = FindObjectOfType<GameManager>();
     }
 
@@ -61,30 +61,32 @@ public class PlayerController : MonoBehaviour
 
         float horizontalInput = Input.GetAxis(horizontal);
         var mov = new Vector3(horizontalInput * speed, rigidbody2D.velocity.y, 0f);
-     
+
         input = horizontalInput;
 
         rigidbody2D.velocity = mov;
 
 
 
-        if (horizontalInput < 0 && facingRight || horizontalInput > 0 && !facingRight)        
+        if (horizontalInput < 0 && facingRight || horizontalInput > 0 && !facingRight)
             Flip();
-        
 
-        
+
+
         if (Input.GetKeyDown(jumpKey) && IsStandingOnGround())
-        {   
+        {
             // Resetting vertical speed to 0 since the player might hit jump when the character is falling down right before hitting the ground
             // in that case the gravity force might overpower the jump force, and the result is that it "feels" like the jump button didn't work
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0f);
             rigidbody2D.AddForce(Vector2.up * jumpForce);
-            feetAnimator.SetTrigger("jump");
+            if (feetAnimator != null)
+                feetAnimator.SetTrigger("jump");
 
         }
 
         bodyAnimator.SetFloat("blendIdleRun", Mathf.Abs(input));
-        feetAnimator.SetFloat("blendIdleRun", Mathf.Abs(input));
+        if (feetAnimator != null)
+            feetAnimator.SetFloat("blendIdleRun", Mathf.Abs(input));
 
 
     }
@@ -107,7 +109,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < numberOfRays; i++)
         {
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, tiles);
-         //   Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
+            //   Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
 
             if (hit)
             {
@@ -129,20 +131,21 @@ public class PlayerController : MonoBehaviour
         facingRight = !facingRight;
         transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, 1f);
     }
-    
+
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if(hitInfo.CompareTag("fire"))
+        if (hitInfo.CompareTag("fire"))
             manager.PlayerDied();
 
     }
 
     private void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        if(hitInfo.collider.CompareTag("collectable")){
-          print("collect");
-          hitInfo.collider.GetComponent<Collectable>().onPickUp();
-          
+        if (hitInfo.collider.CompareTag("collectable"))
+        {
+            print("collect");
+            hitInfo.collider.GetComponent<Collectable>().onPickUp();
+
         }
     }
 
