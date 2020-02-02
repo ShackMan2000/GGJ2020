@@ -42,7 +42,8 @@ public class Weapon : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.C))
         {
-            Shoot(playerTransform.localScale.x);
+            float direction = playerTransform.localScale.x >= 0f ?1f : -1f;
+            Shoot(direction);
             animator.SetTrigger("shoot");
         }
 
