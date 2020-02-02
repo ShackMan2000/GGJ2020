@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidbody2D;
     private Collider2D collider;
 
+    [SerializeField]
+    private KeyCode jumpKey;
+
 
     private void Awake()
     {
@@ -63,7 +66,7 @@ public class PlayerController : MonoBehaviour
         
 
         
-        if (Input.GetKeyDown(KeyCode.UpArrow) && IsStandingOnGround())
+        if (Input.GetKeyDown(jumpKey) && IsStandingOnGround())
         {   
             // Resetting vertical speed to 0 since the player might hit jump when the character is falling down right before hitting the ground
             // in that case the gravity force might overpower the jump force, and the result is that it "feels" like the jump button didn't work
