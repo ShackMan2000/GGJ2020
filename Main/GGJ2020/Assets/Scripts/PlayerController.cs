@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
     public float input;
 
 
-
-    private Animator animator;
+    [SerializeField]
+    private Animator bodyAnimator, feetAnimator;
     public Rigidbody2D rigidbody2D;
     private Collider2D collider;
 
@@ -41,9 +41,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        collider = GetComponent<BoxCollider2D>();
-        animator = GetComponent<Animator>();
-       
+        collider = GetComponent<CircleCollider2D>();       
     }
 
     void Update()
@@ -57,6 +55,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2D.velocity = mov;
 
 
+
         if (horizontalInput < 0 && facingRight || horizontalInput > 0 && !facingRight)        
             Flip();
         
@@ -68,11 +67,13 @@ public class PlayerController : MonoBehaviour
             // in that case the gravity force might overpower the jump force, and the result is that it "feels" like the jump button didn't work
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0f);
             rigidbody2D.AddForce(Vector2.up * jumpForce);
-            animator.SetTrigger("jump");
+            feetAnimator.SetTrigger("jump");
 
         }
 
-        animator.SetFloat("horizontalMoveAbsolute", Mathf.Abs(rigidbody2D.velocity.x));
+        bodyAnimator.SetFloat("blendIdleRun", Mathf.Abs(input));
+        feetAnimator.SetFloat("blendIdleRun", Mathf.Abs(input));
+
 
     }
 
