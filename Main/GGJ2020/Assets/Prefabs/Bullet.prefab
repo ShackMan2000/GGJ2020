@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 189dad4c30121bd4cb8f24fd41ef3611, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2eb333a9e5707b44eab490c4df0ad19d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -223,7 +223,32 @@ PrefabInstance:
     - target: {fileID: 6497892921186648282, guid: e4e4033cf54a3ea4bbbff57b6e1ddd61,
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497892921186648282, guid: e4e4033cf54a3ea4bbbff57b6e1ddd61,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497892921186648282, guid: e4e4033cf54a3ea4bbbff57b6e1ddd61,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497892921186648282, guid: e4e4033cf54a3ea4bbbff57b6e1ddd61,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497892921186648282, guid: e4e4033cf54a3ea4bbbff57b6e1ddd61,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497892921186648282, guid: e4e4033cf54a3ea4bbbff57b6e1ddd61,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e4033cf54a3ea4bbbff57b6e1ddd61, type: 3}
