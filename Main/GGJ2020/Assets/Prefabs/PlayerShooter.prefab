@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 473991511760018020}
   - component: {fileID: 7030445424488238301}
   - component: {fileID: 1496538407}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShooterBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1073003827822361437}
   - component: {fileID: 3944252807275405199}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShooterHair1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9010802880915969401}
   - component: {fileID: 3213506474989231608}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HandRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4151462343144340142}
   - component: {fileID: 486008947881395230}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FootRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 538234253153595808}
   - component: {fileID: 5387089673766574850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FootLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4938126553061589274}
   - component: {fileID: 8228101974157857950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShooterHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 466019083}
   - component: {fileID: 466019084}
   - component: {fileID: 466019082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,14 +609,14 @@ MonoBehaviour:
   jumpForce: 600
   cam: {fileID: 0}
   cameraBoundsMargin: 0
-  numberOfRays: 2
+  numberOfRays: 8
   rayLength: 0.1
   horizontal: Horizontal1
   input: 0
   bodyAnimator: {fileID: 1496538407}
   feetAnimator: {fileID: 2434322381818215886}
   rigidbody2D: {fileID: 0}
-  jumpKey: 0
+  jumpKey: 273
 --- !u!58 &466019082
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5218460769108790637}
   - component: {fileID: 6254092056252068331}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HandLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5897949104720176142}
   - component: {fileID: 1012143563118300574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShooterHair2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,10 +826,25 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 7813674925521125631}
+    - target: {fileID: 3677164855214587507, guid: 6b7e518f9ffb3d640988c317134f5f12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5513546566979101182, guid: 6b7e518f9ffb3d640988c317134f5f12,
         type: 3}
       propertyPath: m_Name
       value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513546566979101182, guid: 6b7e518f9ffb3d640988c317134f5f12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616414911574373341, guid: 6b7e518f9ffb3d640988c317134f5f12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6980248731538929694, guid: 6b7e518f9ffb3d640988c317134f5f12,
         type: 3}
@@ -885,6 +900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472355592982932216, guid: 6b7e518f9ffb3d640988c317134f5f12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7e518f9ffb3d640988c317134f5f12, type: 3}

@@ -17,11 +17,11 @@ TagManager:
   - 
   - tiles
   - player
+  - bullet
+  - fire
   - 
   - 
   - 
-  - 
-  - newUI
   - 
   - 
   - 

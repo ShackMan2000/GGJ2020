@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 193619136}
   - component: {fileID: 193619137}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: PlaceHolderTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1786207336}
   - component: {fileID: 1786207337}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8628597333028148631}
   - component: {fileID: 3158894486017182420}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BuilderScreen1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3892418990814403389}
   - component: {fileID: 1582763297125294937}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BuilderPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8976660691902356566}
   - component: {fileID: 1078890908145195696}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BuilderFace1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4565776422055322424}
   - component: {fileID: 291186192223713483}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6752748445376335145}
   - component: {fileID: 2796080237321764989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BuilderRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2934369754235023748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Antenna1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 5684939862280941352}
   - component: {fileID: 469180307466374492}
   - component: {fileID: 1413159662842457997}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HoverWaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5333,7 +5333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7355969469786241953}
   - component: {fileID: 5502931361796877963}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BuilderBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5418,7 +5418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4976515636531349781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Antenna2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5450,7 +5450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3964679305161026312}
   - component: {fileID: 2127437760487200673}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collectable (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5534,7 +5534,7 @@ GameObject:
   - component: {fileID: 1164649697}
   - component: {fileID: 1164649695}
   - component: {fileID: 1164649696}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerBuilder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5610,9 +5610,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.4}
+  m_Offset: {x: 0, y: -0.34515277}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1.4451528
 --- !u!114 &1164649696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5633,11 +5633,11 @@ MonoBehaviour:
   jumpForce: 600
   cam: {fileID: 0}
   cameraBoundsMargin: 0
-  numberOfRays: 2
-  rayLength: 0.37
+  numberOfRays: 9
+  rayLength: 0.22
   horizontal: Horizontal2
   input: 0
-  bodyAnimator: {fileID: 0}
+  bodyAnimator: {fileID: 7556546383358408863}
   feetAnimator: {fileID: 0}
   rigidbody2D: {fileID: 0}
   jumpKey: 119
