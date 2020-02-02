@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float rayLength = 0.1f;
 
+    [SerializeField]
+    private string horizontal;
 
     public float input;
 
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis(horizontal);
         var mov = new Vector3(horizontalInput * speed, rigidbody2D.velocity.y, 0f);
      
         input = horizontalInput;
