@@ -55,7 +55,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
-    descriptiveName: 
+    descriptiveName: player 1 fire
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left ctrl
@@ -71,10 +71,10 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire2
-    descriptiveName: 
+    descriptiveName: player 2 fire
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: right ctrl
     altNegativeButton: 
     altPositiveButton: mouse 1
     gravity: 1000
