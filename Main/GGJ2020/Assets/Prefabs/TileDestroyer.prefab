@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapToDestroy: {fileID: 0}
+  explosionPF: {fileID: 2587704252963985152, guid: c9c0cd70ede328b44a6757aadd90e292,
+    type: 3}

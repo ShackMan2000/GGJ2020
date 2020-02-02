@@ -8,7 +8,13 @@ public class TileDestroyer : MonoBehaviour
     [SerializeField]
     private Tilemap mapToDestroy;
 
+    [SerializeField]
+    private Explosion explosionPF;
+
+
     private int mapZ;
+
+
 
 
 
@@ -29,7 +35,18 @@ public class TileDestroyer : MonoBehaviour
 
         foreach (var pos in destroyList)
         {      
-            mapToDestroy.SetTile(new Vector3Int(pos.x + startPos.x, pos.y + startPos.y, mapZ), null);
+            Vector3Int cellPos = new Vector3Int(pos.x + startPos.x, pos.y + startPos.y, mapZ);
+            if (mapToDestroy.GetTile(cellPos) != null)
+            {
+
+
+
+                mapToDestroy.SetTile(cellPos, null);
+                Vector2 worldPos = mapToDestroy.CellToWorld(cellPos);
+                Explosion newExplosion = Instantiate(explosionPF);
+                newExplosion.transform.position = worldPos;
+            }
+
            
         }
 
