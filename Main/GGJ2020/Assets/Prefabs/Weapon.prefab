@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5513546566979101182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.091, y: 0.439, z: 0}
-  m_LocalScale: {x: 0.404, y: 0.543, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8835178438011371638}
   m_Father: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7f0adeed86c6844ca9a3c8f7ddc81dd, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b58d23a39b3b29048a6a6bef592b464a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPF: {fileID: 7277736101866720878, guid: f2a80d5da3473584dac89ef4ebdd195b,
     type: 3}
-  playerTransform: {fileID: 0}
   bulletSpawnPoint: {fileID: 8835178438011371638}
+  playerTransform: {fileID: 0}
 --- !u!1 &7472355592982932216
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,8 +124,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7472355592982932216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.64, y: -0.231, z: 0}
-  m_LocalScale: {x: 0.519, y: 0.537, z: 1}
+  m_LocalPosition: {x: 2.402, y: 0.434, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6980248731538929694}
   m_RootOrder: 0
@@ -169,8 +169,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7f0adeed86c6844ca9a3c8f7ddc81dd, type: 3}
-  m_Color: {r: 0.06170094, g: 1, b: 0, a: 0.40392157}
+  m_Sprite: {fileID: 21300000, guid: 2eb333a9e5707b44eab490c4df0ad19d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
