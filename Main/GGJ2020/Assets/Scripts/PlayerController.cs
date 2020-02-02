@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public bool facingRight = true;
-    public LayerMask platformLayer;
+
+
+    public LayerMask tiles;
 
     [SerializeField]
     private float speed = 5.0f;
@@ -33,6 +35,10 @@ public class PlayerController : MonoBehaviour
 
     public float input;
 
+    
+
+
+    private GameManager manager;
 
     [SerializeField]
     private Animator bodyAnimator, feetAnimator;
@@ -46,7 +52,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        collider = GetComponent<CircleCollider2D>();       
+        collider = GetComponent<CircleCollider2D>();   
+        manager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -99,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
         for (int i = 0; i < numberOfRays; i++)
         {
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, platformLayer);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, tiles);
          //   Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.red);
 
             if (hit)
@@ -109,6 +116,8 @@ public class PlayerController : MonoBehaviour
             float nextRaySpacing = (boxBounds.extents.x * 2.0f) / (numberOfRays - 1f);
             rayOrigin += Vector2.right * nextRaySpacing;
         }
+
+
 
         return atLeastOneRayHittingGround;
     }
@@ -124,7 +133,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if(hitInfo.CompareTag("fire"))
-            print("dead");
+            manager.PlayerDied();
 
     }
 
